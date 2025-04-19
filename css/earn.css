@@ -1,0 +1,472 @@
+/* earn.css - Consistent with style.css but specialized for Earn page */
+
+/* Base Styles (consistent with style.css) */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px 0;
+}
+
+/* Header (consistent with style.css) */
+header {
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  font-size: 1.8rem;
+  color: #5b37b7;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+nav a:hover,
+nav a.active {
+  color: #5b37b7;
+  background-color: rgba(91, 55, 183, 0.1);
+}
+
+/* Wallet Button (consistent with style.css) */
+.wallet-btn {
+  display: flex;
+  align-items: center;
+}
+
+#connectWallet {
+  background-color: #5b37b7;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+#connectWallet:hover {
+  background-color: #4a2b9b;
+}
+
+.wallet-address {
+  font-size: 0.9rem;
+  margin-left: 10px;
+  color: #666;
+}
+
+/* Page Header (consistent with contact.css) */
+.page-header {
+  background: linear-gradient(135deg, #5b37b7 0%, #3a1f7a 100%);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.page-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.page-header p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Earn Section */
+.earn-section {
+  padding: 3rem 0;
+}
+
+/* Stats Section (enhanced from style.css) */
+.stats {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.stats h3 {
+  color: #5b37b7;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.stat-card {
+  background-color: #f9f5ff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #5b37b7;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Task List (enhanced from style.css) */
+.task-container {
+  margin-bottom: 2rem;
+}
+
+.task-container h3 {
+  color: #5b37b7;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.task-list {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid #eee;
+  transition: all 0.3s ease;
+}
+
+.task-item:last-child {
+  border-bottom: none;
+}
+
+.task-item:hover {
+  background-color: #f9f5ff;
+}
+
+.task-info h4 {
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.task-info p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.task-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.task-points {
+  background-color: #5b37b7;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.task-action button {
+  background-color: #5b37b7;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.task-action button:hover {
+  background-color: #4a2b9b;
+  transform: translateY(-2px);
+}
+
+/* Task States */
+.task-item.completed {
+  background-color: #f0fdf4;
+}
+
+.task-item.completed .task-info h4 {
+  color: #065f46;
+}
+
+.task-item.completed .task-points {
+  background-color: #10b981;
+}
+
+.task-item.completed .task-action button {
+  background-color: #10b981;
+  cursor: default;
+  position: relative;
+  padding-left: 35px;
+}
+
+.task-item.completed .task-action button::before {
+  content: "✓";
+  position: absolute;
+  left: 15px;
+}
+
+.task-item.claimable {
+  animation: pulse 2s infinite;
+  border-left: 4px solid #f59e0b;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(245, 158, 11, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
+  }
+}
+
+.task-item.claimable .task-action button {
+  background-color: #f59e0b;
+}
+
+.task-item.claimable .task-action button:hover {
+  background-color: #d97706;
+}
+
+/* Rewards Info (new) */
+.rewards-info {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.rewards-info h3 {
+  color: #5b37b7;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.rewards-card {
+  background-color: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.rewards-card p {
+  margin-bottom: 1rem;
+  color: #0369a1;
+}
+
+.rewards-card p:last-child {
+  margin-bottom: 0;
+}
+
+.rewards-card strong {
+  color: #075985;
+}
+
+/* Footer (consistent with style.css) */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .task-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem 0;
+  }
+
+  .task-meta {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .task-action {
+    width: 100%;
+  }
+
+  .task-action button {
+    width: 100%;
+  }
+}
+/* Add to the end of your earn.css */
+
+/* Verification Popup/Modal Styles */
+.verification-popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 350px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  overflow: hidden;
+  transform: translateY(100px);
+  opacity: 0;
+  animation: slideUp 0.4s forwards;
+}
+
+@keyframes slideUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.verification-header {
+  background-color: #5b37b7;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.verification-header h4 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.close-popup {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0 5px;
+}
+
+.verification-content {
+  padding: 20px;
+}
+
+.verification-content p {
+  margin-bottom: 20px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.verification-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.verification-actions button {
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.verify-btn {
+  background-color: #5b37b7;
+  color: white;
+}
+
+.verify-btn:hover {
+  background-color: #4a2b9b;
+}
+
+.cancel-btn {
+  background-color: #f3f4f6;
+  color: #333;
+}
+
+.cancel-btn:hover {
+  background-color: #e5e7eb;
+}
+
+/* Success State */
+.verification-popup.success {
+  border-left: 4px solid #10b981;
+}
+
+.verification-popup.success .verification-header {
+  background-color: #10b981;
+}
+
+/* Error State */
+.verification-popup.error {
+  border-left: 4px solid #ef4444;
+}
+
+.verification-popup.error .verification-header {
+  background-color: #ef4444;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 480px) {
+  .verification-popup {
+    width: calc(100% - 40px);
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+  }
+}
+
+/* Add this to ensure footer content isn't hidden by popup */
+footer {
+  position: relative;
+  z-index: 1;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FIC Airdrop - Home</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <h1>FIC Airdrop</h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="earn.html">Earn</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="wallet-btn">
+          <button id="connectWallet">Connect Wallet</button>
+          <div id="walletAddress" class="wallet-address"></div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <h2>Welcome to FIC Airdrop</h2>
+          <p>Complete tasks and earn FIC tokens as rewards!</p>
+          <div class="cta-buttons">
+            <button id="startEarning" class="btn primary">Start Earning</button>
+            <a href="#features"
+              ><button class="btn secondary" id="learnMore">
+                Learn More
+              </button></a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="features" id="features">
+        <div class="container">
+          <h2>How It Works</h2>
+          <div class="feature-grid">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <img src="images/no-connection.png" class="feature-image" />
+              </div>
+              <h3>Connect Wallet</h3>
+              <p>Connect your cryptocurrency wallet to get started</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <img src="images/checked.png" class="feature-image" />
+              </div>
+              <h3>Complete Tasks</h3>
+              <p>Participate in various tasks to earn points</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <img src="images/reward.png" class="feature-image" />
+              </div>
+              <h3>Earn Rewards</h3>
+              <p>Convert your points to FIC token rewards</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 FIC Airdrop. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.8.0/web3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/wallet.js"></script>
+    <script src="js/supabase.js"></script>
+    <script>
+      document.getElementById("startEarning").addEventListener("click", () => {
+        window.location.href = "earn.html";
+      });
+    </script>
+  </body>
+</html>

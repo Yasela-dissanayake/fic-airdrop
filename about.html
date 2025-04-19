@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FIC Airdrop - About Us</title>
+    <link rel="stylesheet" href="css/about.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.8.0/web3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <h1>FIC Airdrop</h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="earn.html">Earn</a></li>
+            <li><a href="about.html" class="active">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="wallet-btn">
+          <button id="connectWallet">Connect Wallet</button>
+          <div id="walletAddress" class="wallet-address"></div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-header">
+        <div class="container">
+          <h2>About FIC Project</h2>
+          <p>Learn more about our mission and vision</p>
+        </div>
+      </section>
+
+      <section class="about-section">
+        <div class="container">
+          <div class="about-content">
+            <h3>Our Mission</h3>
+            <p>
+              FIC (Financial Inclusion Coin) is dedicated to bringing financial
+              services to the unbanked and underbanked populations worldwide.
+              Through blockchain technology, we aim to create a more inclusive
+              financial ecosystem that works for everyone, regardless of their
+              location or financial status.
+            </p>
+
+            <h3>The FIC Token</h3>
+            <p>
+              The FIC token is the backbone of our ecosystem, enabling seamless,
+              low-cost transactions across borders. It serves as both a medium
+              of exchange and a governance token, allowing holders to
+              participate in the decision-making process of the platform.
+            </p>
+
+            <h3>Airdrop Program</h3>
+            <p>
+              Our airdrop program is designed to distribute FIC tokens to early
+              supporters and community members. By completing various tasks,
+              participants can earn points that will be converted to FIC tokens
+              at the end of the campaign.
+            </p>
+
+            <h3>Roadmap</h3>
+            <div class="roadmap">
+              <div class="roadmap-item">
+                <div class="roadmap-date">Q1 2025</div>
+                <div class="roadmap-content">
+                  <h4>Community Building</h4>
+                  <p>
+                    Launch of airdrop program and community expansion
+                    initiatives
+                  </p>
+                </div>
+              </div>
+              <div class="roadmap-item">
+                <div class="roadmap-date">Q2 2025</div>
+                <div class="roadmap-content">
+                  <h4>Mainnet Launch</h4>
+                  <p>
+                    FIC token deployment on mainnet and initial exchange
+                    listings
+                  </p>
+                </div>
+              </div>
+              <div class="roadmap-item">
+                <div class="roadmap-date">Q3 2025</div>
+                <div class="roadmap-content">
+                  <h4>Platform Release</h4>
+                  <p>Launch of the core financial services platform</p>
+                </div>
+              </div>
+              <div class="roadmap-item">
+                <div class="roadmap-date">Q4 2025</div>
+                <div class="roadmap-content">
+                  <h4>Global Expansion</h4>
+                  <p>Strategic partnerships and global outreach programs</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-section">
+            <h3>Our Team</h3>
+            <div class="team-grid">
+              <div class="team-member">
+                <div class="member-photo">👤</div>
+                <h4>Alex Johnson</h4>
+                <p>Founder & CEO</p>
+              </div>
+              <div class="team-member">
+                <div class="member-photo">👤</div>
+                <h4>Sarah Chen</h4>
+                <p>CTO</p>
+              </div>
+              <div class="team-member">
+                <div class="member-photo">👤</div>
+                <h4>Michael Rodriguez</h4>
+                <p>Head of Operations</p>
+              </div>
+              <div class="team-member">
+                <div class="member-photo">👤</div>
+                <h4>Jessica Park</h4>
+                <p>Community Manager</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 FIC Airdrop. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/wallet.js"></script>
+    <script src="js/supabase.js"></script>
+  </body>
+</html>

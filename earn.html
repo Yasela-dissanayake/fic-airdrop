@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FIC Airdrop - Earn</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.8.0/web3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <h1>FIC Airdrop</h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="earn.html" class="active">Earn</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="wallet-btn">
+          <button id="connectWallet">Connect Wallet</button>
+          <div id="walletAddress" class="wallet-address"></div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-header">
+        <div class="container">
+          <h2>Earn FIC Tokens</h2>
+          <p>
+            Complete tasks and earn points that can be converted to FIC tokens
+          </p>
+        </div>
+      </section>
+
+      <section class="earn-section">
+        <div class="container">
+          <div class="stats" id="userStats">
+            <h3>Your Stats</h3>
+            <p>Connect your wallet to view your stats</p>
+          </div>
+
+          <div class="task-container">
+            <h3>Available Tasks</h3>
+            <div class="task-list" id="taskList">
+              <!-- Tasks will be loaded here -->
+            </div>
+          </div>
+
+          <div class="rewards-info">
+            <h3>Rewards Information</h3>
+            <div class="rewards-card">
+              <p>
+                Points are converted to FIC tokens at a rate of
+                <strong>100 points = 1 FIC</strong>
+              </p>
+              <p>Complete all available tasks to maximize your rewards!</p>
+              <p>
+                The FIC airdrop will be distributed after the campaign ends.
+                Stay tuned for announcements.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 FIC Airdrop. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.8.0/web3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/wallet.js"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/tasks.js"></script>
+  </body>
+</html>
