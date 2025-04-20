@@ -1,50 +1,10 @@
-// Task related functionality
-
-// Sample tasks if not using Supabase yet
-const sampleTasks = [
-  {
-    id: 1,
-    name: "Follow on Twitter",
-    description: "Follow FIC Project on Twitter",
-    points: 50,
-    action_url: "https://twitter.com/ficproject",
-    verification_type: "manual",
-  },
-  {
-    id: 2,
-    name: "Join Discord",
-    description: "Join our Discord server community",
-    points: 75,
-    action_url: "https://discord.gg/ficproject",
-    verification_type: "manual",
-  },
-  {
-    id: 3,
-    name: "Share on Twitter",
-    description: "Share about FIC Airdrop on your Twitter profile",
-    points: 100,
-    action_url:
-      "https://twitter.com/intent/tweet?text=I'm%20earning%20$FIC%20tokens%20through%20the%20airdrop%20program!%20Join%20me%20at%20https://ficairdrop.com",
-    verification_type: "manual",
-  },
-  {
-    id: 4,
-    name: "Daily Check-in",
-    description: "Check in daily to earn points",
-    points: 25,
-    action_url: "#",
-    verification_type: "automatic",
-  },
-];
-
-// Variables
 let tasks = [];
 let completedTaskIds = [];
 let userData = null;
 
 // Initialize tasks
 async function initTasks() {
-  // This function will handle loading tasks when the Earn page loads
+  
   if (!window.walletUtils || !window.walletUtils.isWalletConnected()) {
     displayWalletRequiredMessage();
     return;
@@ -53,13 +13,8 @@ async function initTasks() {
   showLoadingState();
 
   try {
-    // Try to get tasks from Supabase
+    //get tasks from Supabase
     tasks = await window.supabaseUtils.getAllTasks();
-
-    // If no tasks from Supabase, use sample tasks
-    if (!tasks || tasks.length === 0) {
-      tasks = sampleTasks;
-    }
 
     // Get user's completed tasks
     completedTaskIds = await window.supabaseUtils.getUserCompletedTasks();
@@ -79,7 +34,7 @@ async function initTasks() {
   hideLoadingState();
 }
 
-// Display tasks on the page
+// Display tasks 
 function displayTasks() {
   const taskListElement = document.getElementById("taskList");
   if (!taskListElement) return;
@@ -116,7 +71,6 @@ function displayTasks() {
 
     taskListElement.appendChild(taskElement);
 
-    // Add event listener to the button
     const button = taskElement.querySelector("button");
     if (!isCompleted) {
       button.addEventListener("click", handleTaskAction);
@@ -133,7 +87,6 @@ async function handleTaskAction(event) {
   const actionUrl = button.dataset.actionUrl;
   const verificationType = button.dataset.verification;
 
-  // For tasks that require external action
   if (actionUrl !== "#") {
     window.open(actionUrl, "_blank");
   }

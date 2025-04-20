@@ -1,4 +1,3 @@
-// Global variables
 let userWalletAddress = null;
 let web3 = null;
 let provider = null;

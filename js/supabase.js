@@ -1,35 +1,26 @@
-// We'll use the Supabase JS client library
-// Add this to your HTML: <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-
-// Initialize Supabase client
-// Replace these with your actual Supabase URL and anon key
 const SUPABASE_URL = "https://ksepoebysvozqtohxzqz.supabase.co";
 const SUPABASE_ANON_KEY =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtzZXBvZWJ5c3ZvenF0b2h4enF6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ5OTg1MzksImV4cCI6MjA2MDU3NDUzOX0.osKzdNVy2o1Vjr0FJRQQtc1Mfr-Q8mBXmVEJoTh3R8k";
 
-// Create a single supabase client for interacting with your database
 const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-// Function to store user in Supabase when wallet is connected
+// store user in Supabase 
 async function storeUserInSupabase() {
   if (!userWalletAddress) return;
 
   try {
-    // Check if user already exists
     const { data: existingUser, error: fetchError } = await supabaseClient
       .from("users")
       .select("*")
       .eq("wallet_address", userWalletAddress)
       .single();
 
-    if (fetchError && fetchError.code !== "PGRST116") {
-      // PGRST116 is the error code for "no rows returned"
+    if (fetchError && fetchError.code !== "PGRST116") { // "no rows returned" error in supabase
       console.error("Error checking for existing user:", fetchError);
       return;
     }
 
     if (!existingUser) {
-      // User doesn't exist, so create a new one
       const { data, error } = await supabaseClient.from("users").insert([
         {
           wallet_address: userWalletAddress,
@@ -82,16 +73,14 @@ async function getUserData() {
   }
 }
 
-// Function to update user points after completing a task
+// update user points after completing a task
 async function updateUserPoints(taskPoints) {
   if (!userWalletAddress) return false;
 
   try {
-    // Get current user data
     const userData = await getUserData();
     if (!userData) return false;
 
-    // Update user data with new points
     const newPoints = userData.points + taskPoints;
     const newTasksCompleted = userData.tasks_completed + 1;
 
@@ -115,7 +104,7 @@ async function updateUserPoints(taskPoints) {
   }
 }
 
-// Function to log task completion
+//log task completion
 async function logTaskCompletion(taskId, taskName, pointsEarned) {
   if (!userWalletAddress) return false;
 
@@ -144,7 +133,7 @@ async function logTaskCompletion(taskId, taskName, pointsEarned) {
   }
 }
 
-// Function to get all available tasks
+//get all available tasks
 async function getAllTasks() {
   try {
     const { data, error } = await supabaseClient
@@ -164,7 +153,7 @@ async function getAllTasks() {
   }
 }
 
-// Function to get completed tasks for current user
+//get completed tasks for current user
 async function getUserCompletedTasks() {
   if (!userWalletAddress) return [];
 
@@ -179,7 +168,6 @@ async function getUserCompletedTasks() {
       return [];
     }
 
-    // Extract task IDs
     return data.map((item) => item.task_id);
   } catch (error) {
     console.error("Error getting completed tasks:", error);
@@ -187,7 +175,6 @@ async function getUserCompletedTasks() {
   }
 }
 
-// Make functions available to other scripts
 window.supabaseUtils = {
   getUserData,
   updateUserPoints,
